@@ -37,6 +37,13 @@ class PostService{
         const post = await Post.findByIdAndDelete(id)
         return post
     }
+
+    changeTitleService = async(id, newTitle) => {
+        const post = await Post.findById(id)
+        post.title = newTitle
+        await Post.findByIdAndUpdate(id, {title: post.title})
+        return post
+    }
 }
 
 const postService = new PostService()
