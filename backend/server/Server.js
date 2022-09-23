@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 
 class Server{
     constructor(){
@@ -15,10 +14,10 @@ class Server{
         require('../settings/databaseConnection')
     }
     middlewares(){
-        this.app.use(bodyParser.urlencoded({
+        this.app.use(express.urlencoded({
             extended: false
-        }))
-        this.app.use(bodyParser.json())
+        }));
+        this.app.use(express.json())
     }
     routes(){
         this.app.use(this.postRoute, require('../routes/post'))
