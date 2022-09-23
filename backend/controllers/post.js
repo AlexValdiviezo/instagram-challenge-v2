@@ -37,7 +37,7 @@ const addLike = async(request, response) => {
     })
 }
 
-const deletePost = async(request, response) => {
+const deletePostById = async(request, response) => {
     const post = await postService.deleteById(request.body.id)
     return response.status(202).json({
         msg: 'post deleted',
@@ -45,11 +45,10 @@ const deletePost = async(request, response) => {
     })
 }
 
-
 module.exports = {
     getAllPosts,
     getOnePost,
     createPost,
     addLike,
-    deletePost
+    deletePostById
 }

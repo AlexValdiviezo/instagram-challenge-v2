@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const Post = require('../models/Post')
 const { check } = require('express-validator')
 const { validationErrors } = require('../middlewares/validationResult')
 
@@ -11,9 +10,8 @@ const {
     getOnePost,
     createPost,
     addLike,
-    deletePost
+    deletePostById
 } = require('../controllers/post')
-
 
 //get all posts
 
@@ -32,6 +30,6 @@ router.post('/', createPost)
 router.put('/likes', check('id').isMongoId(), validationErrors, addLike)
 
 //delete post
-router.delete('/', check('id').isMongoId(), deletePost)
+router.delete('/', check('id').isMongoId(), validationErrors, deletePostById)
 
 module.exports = router
