@@ -6,7 +6,7 @@ const { getAllPosts, createPost, addLike, deletePost, editPost } = require('./cl
 program
     .name('API CLI - instagram challenge')
     .description('CLI to access API services')
-    .version('0.1.0')
+    .version('1.0.0')
 
 program.command('get-all-posts') 
     .action(getAllPosts)
