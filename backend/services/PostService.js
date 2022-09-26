@@ -11,6 +11,20 @@ class PostService{
         return posts
     }
 
+    paginatePost = async(page=1, limit=5) => {
+        const posts = await Post.find({}, {
+            skip: page*limit,
+            page
+        })
+        const total = await Post.count({})
+        return {
+            total,
+            page,
+            itemsPerPage: posts.length,
+            items: posts
+        }
+    }
+
     getById = async(id) => {
         const post = await Post.findById(id)
         return post

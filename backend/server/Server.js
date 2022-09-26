@@ -3,12 +3,11 @@ const {ApolloServer} = require('apollo-server-express')
 const resolvers = require('../graphQL/resolvers/PostResolvers')
 const typeDefs = require('../graphQL/types/PostTypes')
 
-
 class Server{
     constructor(){
         this.app = express()
         this.apolloServer = new ApolloServer({typeDefs, resolvers})
-        this.postRoute = '/post'
+        this.postRoute = '/api/post'
         this.port = 4001
         this.dbConnect()
         this.apolloServerStart()

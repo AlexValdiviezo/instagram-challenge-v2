@@ -27,7 +27,6 @@ const typeDefs = gql`
         deletePostById(id: ID!): Post
         changeTitle(
         id: ID!
-        newTitle: String
         ): Post
     }
 `
