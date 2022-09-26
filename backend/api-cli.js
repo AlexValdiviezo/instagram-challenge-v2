@@ -1,19 +1,19 @@
 require('dotenv').config()
 
 const { program } = require('commander')
-const { getAllPosts, createPost, addLike, deletePost, editPost } = require('./cli/actions/post')
+const { getAllPosts, createPost, addLike, deletePost, editPost, getPostById } = require('./cli/actions/post')
 
 program
     .name('API CLI - instagram challenge')
     .description('CLI to access API services')
-    .version('1.0.0')
+    .version('1.0.1')
 
 program.command('get-all-posts') 
     .action(getAllPosts)
 
 program.command('get-post-by-id')
     .option('--id <id>', 'post id')
-    .action(getAllPosts)
+    .action(getPostById)
 
 program.command('create-post')
     .option('-u, --username <username>', 'post username')
