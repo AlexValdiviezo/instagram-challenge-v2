@@ -27,9 +27,7 @@ class PostService{
     }
 
     addLike = async(id) => {
-        const post = await Post.findById(id)
-        post.likes ++
-        await Post.findByIdAndUpdate(id, {likes: post.likes})
+        const post = await Post.findByIdAndUpdate(id, {likes: post.likes}, {new: true})
         return post
     }
 
@@ -39,9 +37,7 @@ class PostService{
     }
 
     changeTitleService = async(id, newTitle) => {
-        const post = await Post.findById(id)
-        post.title = newTitle
-        await Post.findByIdAndUpdate(id, {title: post.title})
+        const post = await Post.findByIdAndUpdate(id, {title: newTitle}, {new: true})
         return post
     }
 }
