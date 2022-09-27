@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
+    "jest": "^29.0.3",
     "nodemon": "2.0.20"
   }
 }
