@@ -2,6 +2,7 @@ const express = require('express')
 const {ApolloServer} = require('apollo-server-express')
 const resolvers = require('../graphQL/resolvers/PostResolvers')
 const typeDefs = require('../graphQL/types/PostTypes')
+const cors = require('cors')
 
 class Server{
     constructor(){
@@ -30,6 +31,7 @@ class Server{
             extended: false
         }));
         this.app.use(express.json())
+        this.app.use(cors())
     }
 
     routes(){
