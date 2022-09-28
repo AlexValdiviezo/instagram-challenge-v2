@@ -13,6 +13,12 @@ const getOnePost = async(request, response) => {
     return response.status(200).json({ post })
 }
 
+const paginatePost = async(request, response) => {
+    const {page, limit} = request.query
+    const postlist = await postService.paginatePost({page, limit})
+    return response.status(200).json({postlist})
+}
+
 const createPost = async(request, response)=>{
     const {username, title, image} = request.body
     const post = await postService.createOne({username, title, image})
@@ -34,5 +40,6 @@ module.exports = {
     getOnePost,
     createPost,
     addLike,
-    deletePostById
+    deletePostById,
+    paginatePost
 }

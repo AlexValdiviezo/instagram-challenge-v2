@@ -10,12 +10,17 @@ const {
     getOnePost,
     createPost,
     addLike,
-    deletePostById
+    deletePostById,
+    paginatePost
 } = require('../controllers/post')
 
 //get all posts
 
 router.get('/', getAllPosts)
+
+//get pagination
+
+router.get('/paginate', paginatePost)
 
 //get one post
 
