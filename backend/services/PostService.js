@@ -13,15 +13,13 @@ class PostService{
     }
 
     paginatePost = async(page=1, limit=5) => {
-        const posts = await Post.find({}, {
-            skip: page*limit,
-            page
-        })
-        const total = await Post.count({})
+        if(page < 1) page = 1
+        const posts = await Post.find({}).skip(page==1 ? 0 : (page-1)*limit).limit(limit)
+        const total = await Post.countDocuments({}) //document
         return {
             total,
             page,
-            itemsPerPage: posts.length,
+            itemsPerPage: limit,
             items: posts
         }
     }

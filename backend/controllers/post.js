@@ -15,7 +15,7 @@ const getOnePost = async(request, response) => {
 
 const paginatePost = async(request, response) => {
     const {page, limit} = request.query
-    const postlist = await postService.paginatePost({page, limit})
+    const postlist = await postService.paginatePost(page, limit)
     return response.status(200).json({postlist})
 }
 
