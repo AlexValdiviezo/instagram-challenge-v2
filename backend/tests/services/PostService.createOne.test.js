@@ -1,8 +1,8 @@
 require('dotenv').config()
-require('../../../settings/databaseConnection')
+require('../../settings/databaseConnection')
 
 const { isValidObjectId } = require('mongoose')
-const postService = require('../../../services/PostService')
+const postService = require('../../services/PostService')
 
 test('create one post - when the post was received must be an object', async() => {
     const post = await postService.createOne({username:'usernameTest', title:'titleTest', image:'https://imagetest.com'})

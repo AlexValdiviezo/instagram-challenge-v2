@@ -1,8 +1,8 @@
 require('dotenv').config()
-require('../../../settings/databaseConnection')
+require('../../settings/databaseConnection')
 
 const { isValidObjectId } = require('mongoose')
-const postService = require('../../../services/PostService')
+const postService = require('../../services/PostService')
 
 test('get post by id - get post as object', async() => {
     const finded = await postService.getAll()

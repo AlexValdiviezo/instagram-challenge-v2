@@ -1,8 +1,8 @@
 require('dotenv').config()
-require('../../../settings/databaseConnection')
+require('../../settings/databaseConnection')
 
 const { isValidObjectId } = require('mongoose')
-const postService = require('../../../services/PostService')
+const postService = require('../../services/PostService')
 
 test('delete post by id - post deleted is object', async() => {
     const postCreated = await postService.createOne({username: 'username', title: 'title', image:'https://imgsrc.com'})

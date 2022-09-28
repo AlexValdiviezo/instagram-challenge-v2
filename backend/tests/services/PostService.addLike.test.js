@@ -1,8 +1,8 @@
 require('dotenv').config()
-require('../../../settings/databaseConnection')
+require('../../settings/databaseConnection')
 
 const { isValidObjectId } = require('mongoose')
-const postService = require('../../../services/PostService')
+const postService = require('../../services/PostService')
 
 test('add like at post - post received must be a object instance & its ok', async() => {
     const {id} = await postService.createOne({username:'usernameTest', title:'titleTest', image:'http://imagetest.com'})
@@ -24,7 +24,7 @@ test('add like at post - likes received should be an increase with the call', as
     expect(post.likes).toBe(testLikes)
 })
 
-test('add like at post - username received must be a String with non spaces', async() => {
+test('add like at post - username received must be a String without spaces', async() => {
     const postcreated = await postService.createOne({username:'usernameTest', title:'titleTest', image:'http://imagetest.com'})
     const {username} = await postService.addLike(postcreated.id)
     await postService.deleteById(postcreated.id)
