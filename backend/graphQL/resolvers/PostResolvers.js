@@ -9,6 +9,10 @@ const resolvers = {
         getOnePost: async (_, {id: uid}) => {
             const {id, title, image, username, likes} =  await postService.getById(uid)
             return {id, title, image, username, likes}
+        },
+        getPaginatedPosts: async(_, {page, limit}) => {
+            const posts = await postService.paginatePost(page, limit)
+            return posts
         }
     },
     Mutation: {

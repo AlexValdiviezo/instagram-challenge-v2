@@ -15,11 +15,18 @@ const typeDefs = gql`
         username: String!
     }
 
+    type PaginatePost{
+        total: Int
+        page: Int
+        itemsPerPage: Int
+        items: [Post]
+    }
+
     type Query{
         getAllPosts: [Post]
         getOnePost(id: ID!): Post
+        getPaginatedPosts(page:Int, limit:Int): PaginatePost
     }
-
 
     type Mutation{
         createPost(post: PostInput): Post

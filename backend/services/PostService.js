@@ -62,7 +62,8 @@ class PostService{
     addLike = async(id) => {
         try {
             if(!isValidObjectId(id)) throw new Error('id must be a MongoID type.')
-            const post = await Post.findByIdAndUpdate(id, {likes: post.likes}, {new: true})
+            const {likes} = await Post.findById(id)
+            const post = await Post.findByIdAndUpdate(id, {likes: likes + 1}, {new: true})
             return post   
         } catch (error) {
             return{

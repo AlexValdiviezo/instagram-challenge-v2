@@ -37,7 +37,7 @@ test('get all posts - username is a String', async() => {
     }
 })
 
-test('get all posts - username not many space', async() => {
+test('get all posts - username mustnt have many space', async() => {
     const posts = await postService.getAll()
     for({username} of posts){
         for(char of username){
@@ -53,7 +53,7 @@ test('get all posts - image is a String', async() => {
     }
 })
 
-test('get all posts - image is a url', async() => {
+test('get all posts - image is a valid url', async() => {
     const posts = await postService.getAll()
     for({image} of posts){
         expect(image.includes('http://', 0) || image.includes('https://', 0)).toBe(true)
