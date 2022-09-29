@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const { program } = require('commander')
-const { getAllPosts, createPost, addLike, deletePost, editPost, getPostById } = require('./cli/actions/post')
+const { getAllPosts, createPost, addLike, deletePost, editPost, getPostById, paginatePost } = require('./cli/actions/post')
 
 program
     .name('API CLI - instagram challenge')
@@ -14,6 +14,11 @@ program.command('get-all-posts')
 program.command('get-post-by-id')
     .option('--id <id>', 'post id')
     .action(getPostById)
+
+program.command('paginate')
+    .option('-p, --page <number>', 'page number')
+    .option('-l, --limit <number>', 'limit per page')
+    .action(paginatePost)
 
 program.command('create-post')
     .option('-u, --username <username>', 'post username')

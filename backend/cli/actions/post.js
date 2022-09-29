@@ -21,6 +21,16 @@ const getPostById = async ({ id }) => {
   }
 }
 
+const paginatePost = async ({page=1, limit=5}) => {
+  try {
+    console.log(await postService.paginatePost(page, limit))
+    process.exit(0)
+  } catch (err) {
+    console.log('post not found')
+    console.log('more info: ' + err)
+  }
+}
+
 const createPost = async ({ username, title, image }) => {
   try {
     console.log(await postService.createOne({ username, title, image }))
@@ -68,4 +78,5 @@ module.exports = {
   deletePost,
   editPost,
   getPostById,
+  paginatePost
 }
