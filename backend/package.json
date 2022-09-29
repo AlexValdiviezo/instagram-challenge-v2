@@ -22,7 +22,7 @@
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
-    "jest": "^29.0.3",
+    "jest": "^25.4.0",
     "nodemon": "2.0.20"
   }
 }
