@@ -23,6 +23,7 @@ test('add like at post - likes received should be an increase with the call', as
     const {id, likes} = await postService.createOne({username:'usernameTest', title:'titleTest', image:'http://imagetest.com'})
     const testLikes = likes + 1
     const post = await postService.addLike(id)
+    await postService.deleteById(id)
     expect(post.likes).toBe(testLikes)
 })
 
