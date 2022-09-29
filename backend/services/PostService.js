@@ -19,14 +19,14 @@ class PostService{
         return {
             total,
             page,
-            itemsPerPage: limit,
+            itemsPerPage: posts.length,
             items: posts
         }
     }
 
     getById = async(id) => {
         try {
-            if(!isValidObjectId(id)) throw new Error('id received not is a mongoID valid')
+            if(!isValidObjectId(id)) throw new Error('id received is not a mongoID valid')
             const post = await Post.findById(id)
             return post   
         } catch (error) {
