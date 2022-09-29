@@ -1,7 +1,4 @@
-const { TextEncoder, TextDecoder } = require('util')
-global.TextEncoder = TextEncoder
-global.TextDecoder = TextDecoder
-
+require('../settings/textEncoder').config()
 
 require('dotenv').config()
 require('../../settings/databaseConnection')
