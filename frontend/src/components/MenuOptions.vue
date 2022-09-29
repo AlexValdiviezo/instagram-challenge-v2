@@ -1,9 +1,8 @@
 <template>
   <v-navigation-drawer 
     v-model="isMenuOpen"
-    absolute
+    fixed
     left
-    temporary
     v-click-outside="onClickOutside"
     class="pt-4 pb-4"
   >

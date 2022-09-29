@@ -10,7 +10,7 @@ class BaseProvider{
         this.gqlc = gqlc
     }
     async getAllPosts(){
-        return this.gqlc.query({
+        return await this.gqlc.query({
             query: gql`
                 query{
                     getAllPosts{
@@ -24,7 +24,21 @@ class BaseProvider{
             `
         })
     }
-    
+    async deletePost(id){
+        return await this.gqlc.mutate({
+            mutation: gql`
+                mutation{
+                    deletePostById(id: ${JSON.stringify(id)}){
+                        id
+                        username
+                        title
+                        image
+                        likes
+                    }
+                }
+            `
+        })
+    }
 }
 
 const baseProvider = new BaseProvider()
