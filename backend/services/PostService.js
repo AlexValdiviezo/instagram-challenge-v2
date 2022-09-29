@@ -7,20 +7,33 @@ class PostService{
         this.desc = "post service"
     }
 
+    fetchTotalDocuments = async() => {
+        const totalDocs = await Post.countDocuments({})
+        return totalDocs
+    }
+
     getAll = async() => {
         const posts = await Post.find({})
         return posts
     }
 
     paginatePost = async(page=1, limit=5) => {
-        if(page < 1) page = 1
-        const posts = await Post.find({}).skip(page==1 ? 0 : (page-1)*limit).limit(limit)
-        const total = await Post.countDocuments({}) //document
-        return {
-            total,
-            page,
-            itemsPerPage: posts.length,
-            items: posts
+        
+        try {
+            if(page < 1) page = 1
+            const posts = await Post.find({}).skip(page==1 ? 0 : (page-1)*limit).limit(limit)
+            const total = await Post.countDocuments({}) //document
+            return {
+                total,
+                page,
+                itemsPerPage: posts.length,
+                items: posts
+            }
+        } catch (error) {
+            return {
+                error: true,
+                msgError: error
+            }
         }
     }
     
