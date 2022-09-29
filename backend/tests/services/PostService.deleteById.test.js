@@ -6,7 +6,7 @@ require('../../settings/databaseConnection')
 const { isValidObjectId } = require('mongoose')
 const postService = require('../../services/PostService')
 
-test('delete post by id - post deleted is object', async() => {
+test('delete post by id - post deleted is an object', async() => {
     const postCreated = await postService.createOne({username: 'username', title: 'title', image:'https://imgsrc.com'})
     const post = await postService.deleteById(postCreated.id)
     expect(post).toBeInstanceOf(Object)
