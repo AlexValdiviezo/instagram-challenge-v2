@@ -15,9 +15,9 @@
         <v-list-item-group
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
+          <v-btn block color="rgba(0,0,0,0)" depressed>
             <v-list-item-title class="text-center font-weight-medium text-h6">ADD POST</v-list-item-title>
-          </v-list-item>
+          </v-btn>
         </v-list-item-group>
       </v-list>
   </v-navigation-drawer>
