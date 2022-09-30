@@ -45,15 +45,16 @@ export default new Vuex.Store({
       state.posts.map((post,index) => {
         if(post.id == id) state.posts.splice(index, 1)
       })
+      return 0
     }
   },
   actions: {
     fetchPosts: async({commit}) => {
       commit('setLoading', true)
       const {data: {getAllPosts: posts}} = await baseProvider.getAllPosts()
-      commit('setPosts', posts)
       setTimeout(() => {
         commit('setLoading', false)
+        commit('setPosts', posts)
       }, 500);
     },
     deletePost: async({commit}, id) => {
@@ -62,6 +63,7 @@ export default new Vuex.Store({
         await baseProvider.deletePost(id)
         setTimeout(() => {
           commit('setLoading', false)
+          commit('deletePost', id)
           commit('setAlert', true)
           commit('setDeleteOk', true)
           setTimeout(() => {
@@ -80,8 +82,6 @@ export default new Vuex.Store({
           }, 2500)
         }, 500)
       }
-
-      commit('deletePost', id)
 
     },
     changeIsMenuOpen: ({commit}, payload) => {

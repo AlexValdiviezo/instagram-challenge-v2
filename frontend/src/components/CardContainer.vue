@@ -1,9 +1,8 @@
 <template>
     <div >
-        <v-card min-height="96vh" class="grey darken-3 py-10 mt-10">
-            <section v-if="!loadingState">
+            <section class="py-10 my-4">
                 <v-card
-                    class="mx-auto my-2"
+                    class="mx-auto my-6"
                     max-width="500"
                     dark
                     outlined
@@ -28,11 +27,12 @@
                     </v-card-text>
                 </v-card>
             </section>
-        </v-card>
         <v-overlay :value="loadingState">
             <v-progress-circular
                 indeterminate
-                size="64"
+                size="100"
+                color="primary"
+                width=10
             ></v-progress-circular>
         </v-overlay>
     </div>

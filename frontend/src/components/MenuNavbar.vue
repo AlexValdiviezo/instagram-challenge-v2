@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar clipped-left fixed color="grey darken-2 white--text">
+  <v-app-bar clipped-left fixed>
     <v-icon color="white" @click="changeMenuState">menu</v-icon>
     <v-spacer/>
     <v-app-bar-title>lnstagram</v-app-bar-title>

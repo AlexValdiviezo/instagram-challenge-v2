@@ -6,7 +6,7 @@
         elevation="0"
     >
                 <v-alert
-                type="success"
+                :type="type"
                 v-bind="attrs"
                 @click="snackbar = false"
                 dismissible
@@ -25,6 +25,11 @@ export default {
             if(this.$store.state.alertModule.deleteOk) return 'Se ha eliminado la publicación'
             if(this.$store.state.alertModule.deleteError) return 'Ha ocurrido un error al eliminar la publicación'
             return 'alert'
+        },
+        type(){
+            if(this.$store.state.alertModule.deleteError) return 'error'
+            if(this.$store.state.alertModule.deleteOk) return 'success'
+            return 'success'
         },
         snackbar(){
             return this.$store.state.alertModule.alert

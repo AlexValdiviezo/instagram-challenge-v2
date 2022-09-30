@@ -14,7 +14,7 @@
       </template>
 
       <v-card>
-        <v-card-title class="text-h5 grey lighten-2 text-center">
+        <v-card-title class="text-h5 text-center">
           ¿Qué desea hacer con la publicación?
         </v-card-title>
         <v-card-actions class="d-flex flex-column">
@@ -24,7 +24,6 @@
             <v-divider></v-divider>
             <v-btn
                 width="100%"
-                color="secondary"
                 text
                 @click="dialog = false"
             >
