@@ -124,13 +124,13 @@ export default new Vuex.Store({
           commit('deletePost', id)
           commit('setAlert', true)
           commit('setDeleteOk', true)
-        }, 500)
+        }, 1000)
       } catch (error) {
         setTimeout(() => {
           commit('setLoading', false)
           commit('setAlert', true)
           commit('setDeleteError', true)
-        }, 500)
+        }, 1000)
       }
 
     },
