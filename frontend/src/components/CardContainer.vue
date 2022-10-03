@@ -1,10 +1,9 @@
 <template>
     <div >
-            <section class="py-10 my-4">
+            <v-layout column class="pt-16">
                 <v-card
                     class="mx-auto my-6"
                     max-width="500"
-                    dark
                     outlined
                     raised
                     v-for="post in posts"
@@ -13,7 +12,7 @@
                     <div class="d-flex pa-4 align-center">
                         <div class="d-flex align-center"><v-icon class="pointer pr-2">person</v-icon>{{post.username}}</div>
                         <v-spacer/>
-                        <card-menu-component :post="post" @cardDelete="fetchPosts"><v-icon class="pointer">menu</v-icon></card-menu-component>
+                        <card-menu :post="post" @cardDelete="fetchPosts"></card-menu>
                     </div>
                     
                     <v-img
@@ -26,7 +25,7 @@
                         <v-icon class="pointer pr-2">favorite_border</v-icon>{{post.likes}}
                     </v-card-text>
                 </v-card>
-            </section>
+            </v-layout>
         <v-overlay :value="loadingState">
             <v-progress-circular
                 indeterminate
@@ -40,10 +39,10 @@
 
 <script>
 import { mapActions } from 'vuex'
-import CardMenuComponent from './CardMenuComponent.vue'
+import CardMenu from './CardMenu.vue'
 
 export default {
-  components: { CardMenuComponent },
+  components: { CardMenu },
     name: 'Card-Container',
     mounted(){
         this.fetchPosts()

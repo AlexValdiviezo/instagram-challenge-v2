@@ -7,7 +7,7 @@ import { mapActions } from 'vuex'
 export default {
     name:'DeleteCardComponent',
     props:{
-        id: String
+        id: {type: String, required: true}
     },
     methods:{
         ...mapActions(['deletePost']),

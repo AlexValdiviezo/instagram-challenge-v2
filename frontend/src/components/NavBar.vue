@@ -1,13 +1,13 @@
 <template>
-
     <nav>
-        <v-toolbar>
+
+        <v-app-bar fixed elevation="3">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             
             <v-spacer></v-spacer>
             
-            <v-toolbar-title>Instagram Challenge</v-toolbar-title>
-        </v-toolbar>
+            <v-app-bar-title class="title">Instagram Challenge</v-app-bar-title>
+        </v-app-bar>
 
         <v-navigation-drawer 
             v-model="drawer"

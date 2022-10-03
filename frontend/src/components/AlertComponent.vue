@@ -1,6 +1,6 @@
 <template>
     <v-snackbar
-        v-model="variable"
+        v-model="snackbar"
         color="rgba(0,0,0,0)"
         elevation="0"
         :timeout="timeout"
@@ -19,7 +19,7 @@ export default {
     data(){
         return{
             timer: 3,
-            variable: true,
+            snackbar: true,
             timeout: 7500
         }
     },
