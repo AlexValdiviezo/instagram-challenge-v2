@@ -6,7 +6,9 @@
             
             <v-spacer></v-spacer>
             
-            <v-app-bar-title class="title">Instagram Challenge</v-app-bar-title>
+            <router-link to="/home" tag="v-app-bar-title" class="pointer">
+              <v-app-bar-title class="title">Instagram Challenge</v-app-bar-title>
+            </router-link>
         </v-app-bar>
 
         <v-navigation-drawer 
@@ -40,10 +42,5 @@
     data: () => ({
       drawer: false
     }),
-    watch: {
-      drawer(){
-        console.log(this.drawer)
-      }
-    },
   }
 </script>

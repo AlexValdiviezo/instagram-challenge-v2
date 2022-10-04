@@ -52,7 +52,6 @@ export default {
             return this.$store.state.posts
         },
         loadingState(){
-            console.log(this.$store.state.loading)
             return this.$store.state.loading
         }
     },

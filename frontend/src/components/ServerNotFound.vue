@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name:'ServerNotFoundComponent',
+    name:'ServerNotFound',
     data(){
         return{
             dialog: true

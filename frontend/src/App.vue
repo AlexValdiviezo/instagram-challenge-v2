@@ -1,24 +1,20 @@
 <template>
   <v-app>
     <server-not-found v-if="serverNotFound"/>
-    <alert-component v-if="alert"/>
-
-    <NavBar/>
-
-    <card-container></card-container>
+    <alert v-if="alert"/>
+    <nav-bar />
+    <router-view/>
   </v-app>
 </template>
 
 <script>
-import AlertComponent from './components/AlertComponent.vue';
-import CardContainer from './components/CardContainer.vue'
-import ServerNotFound from './components/ServerNotFound.vue';
-import NavBar from './components/NavBar.vue';
-
+import ServerNotFound from './components/ServerNotFound.vue'
+import Alert from './components/Alert.vue'
+import NavBar from './components/NavBar.vue'
 
 export default {
-  name: 'App',
-  components: { CardContainer, AlertComponent, ServerNotFound, NavBar },
+  name: 'app',
+  components: { ServerNotFound, Alert, NavBar },
   computed:{
     alert(){
       return this.$store.state.alertModule.alert
@@ -27,8 +23,11 @@ export default {
       return this.$store.state.alertModule.serverNotFound
     }
   }
-};
+}
 </script>
 
-<style scoped>
+<style>
+  .pointer{
+    cursor: pointer;
+  }
 </style>
