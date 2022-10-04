@@ -78,6 +78,11 @@ export default new Vuex.Store({
         if(post.id == id) state.posts.splice(index, 1)
       })
       return 0
+    },
+    addLikePost(state, id){
+      state.posts.map((post, index) => {
+        if(post.id == id) state.posts[index].likes += 1
+      })
     }
   },
   actions: {
@@ -133,6 +138,14 @@ export default new Vuex.Store({
         }, 1000)
       }
 
+    },
+    addLikePost: async({commit}, id) => {
+      try {
+        await baseProvider.addLike(id)
+        commit('addLikePost', id)
+      }catch(error){
+        console.log('error al añadir un like: ' + error)
+      }
     },
     changeIsMenuOpen: ({commit}, payload) => {
       commit('changeIsMenuOpen', payload)

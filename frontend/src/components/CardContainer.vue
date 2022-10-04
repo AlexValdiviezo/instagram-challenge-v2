@@ -27,7 +27,7 @@
                     <v-card-title>{{post.title}}</v-card-title>
                     <div class="px-3"><v-divider/></div>
                     <v-card-actions class="pa-4">
-                        <v-icon left class="pointer">favorite_border</v-icon>{{post.likes}}
+                        <v-icon left class="pointer" @click="addLikePost(post.id)">favorite_border</v-icon>{{post.likes}}
                     </v-card-actions>   
                 </v-card>
             </v-layout>
@@ -61,7 +61,7 @@ export default {
         }
     },
     methods:{
-        ...mapActions(['fetchPosts']),
+        ...mapActions(['fetchPosts', 'addLikePost']),
     }
 }
 </script>

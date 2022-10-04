@@ -39,6 +39,17 @@ class BaseProvider{
             `
         })
     }
+    async addLike(id){
+        return await this.gqlc.mutate({
+            mutation: gql`
+                mutation{
+                    addLike(id: ${JSON.stringify(id)}){
+                        id
+                    }
+                }
+            `
+        })
+    }
 }
 
 const baseProvider = new BaseProvider()
