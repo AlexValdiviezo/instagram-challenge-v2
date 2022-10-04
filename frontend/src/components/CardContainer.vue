@@ -10,7 +10,12 @@
                     :key="post.id"
                     >
                     <v-card-actions class="pa-4">
-                        <v-icon left class="pointer">person</v-icon>{{post.username}}
+                        <router-link :to="`/profile/${post.username}`" tag="div">
+                            <v-layout align-center justify-start class="pointer">
+                            <v-icon>person</v-icon>
+                            <v-card-text>{{post.username}}</v-card-text>
+                            </v-layout>
+                        </router-link>
                         <v-spacer />
                         <card-menu :post="post" @cardDelete="fetchPosts"></card-menu>
                     </v-card-actions>

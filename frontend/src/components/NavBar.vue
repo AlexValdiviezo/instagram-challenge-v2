@@ -6,7 +6,7 @@
             
             <v-spacer></v-spacer>
             
-            <router-link to="/home" tag="v-app-bar-title" class="pointer">
+            <router-link to="/home" tag="div" class="pointer">
               <v-app-bar-title class="title">Instagram Challenge</v-app-bar-title>
             </router-link>
         </v-app-bar>
