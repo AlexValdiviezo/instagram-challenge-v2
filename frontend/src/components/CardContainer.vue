@@ -9,21 +9,21 @@
                     v-for="post in posts"
                     :key="post.id"
                     >
-                    <div class="d-flex pa-4 align-center">
-                        <div class="d-flex align-center"><v-icon class="pointer pr-2">person</v-icon>{{post.username}}</div>
-                        <v-spacer/>
+                    <v-card-actions class="pa-4">
+                        <v-icon left class="pointer">person</v-icon>{{post.username}}
+                        <v-spacer />
                         <card-menu :post="post" @cardDelete="fetchPosts"></card-menu>
-                    </div>
+                    </v-card-actions>
                     
                     <v-img
                         :src="post.image"
                     ></v-img>
 
                     <v-card-title>{{post.title}}</v-card-title>
-
-                    <v-card-text class="d-flex align-center">
-                        <v-icon class="pointer pr-2">favorite_border</v-icon>{{post.likes}}
-                    </v-card-text>
+                    <div class="px-3"><v-divider/></div>
+                    <v-card-actions class="pa-4">
+                        <v-icon left class="pointer">favorite_border</v-icon>{{post.likes}}
+                    </v-card-actions>   
                 </v-card>
             </v-layout>
         <v-overlay :value="loadingState">

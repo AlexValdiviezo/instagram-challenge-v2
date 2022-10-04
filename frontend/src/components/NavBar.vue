@@ -1,8 +1,8 @@
 <template>
     <nav>
 
-        <v-app-bar fixed elevation="3">
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar app fixed elevation="3">
+            <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             
             <v-spacer></v-spacer>
             
@@ -11,10 +11,9 @@
 
         <v-navigation-drawer 
             v-model="drawer"
-            fixed
             left
-            temporary
-            absolute
+            fixed
+            app
             class="pt-4 pb-4"
         >
         <v-app-bar-title class="text-center">Actions</v-app-bar-title>
@@ -39,14 +38,12 @@
 <script>
   export default {
     data: () => ({
-      drawer: false,
-      group: null,
+      drawer: false
     }),
-
     watch: {
-      group () {
-        this.drawer = false
-      },
+      drawer(){
+        console.log(this.drawer)
+      }
     },
   }
 </script>
