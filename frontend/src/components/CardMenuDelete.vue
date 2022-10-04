@@ -1,5 +1,5 @@
 <template>
-  <v-btn @click="clicked" text width="100%" color="red">Eliminar Publicación</v-btn>
+  <v-btn @click="clicked" text width="100%" color="red">borrar publicación</v-btn>
 </template>
 
 <script>
@@ -20,5 +20,4 @@ export default {
 </script>
 
 <style>
-
 </style>

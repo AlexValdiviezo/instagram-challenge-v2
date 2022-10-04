@@ -5,10 +5,7 @@
     </template>
     <v-list>
       <v-list-item>
-        <delete-card :id="post.id"/>
-      </v-list-item>
-      <v-list-item>
-        <delete-card :id="post.id"/>
+        <card-menu-edit :id="post.id"/>
       </v-list-item>
       <v-list-item>
         <delete-card :id="post.id"/>
@@ -18,9 +15,12 @@
 </template>
 
 <script>
-import DeleteCard from './DeleteCard.vue'
+import DeleteCard from './CardMenuDelete.vue'
+import CardMenuEdit from './CardMenuEdit.vue'
+
+
 export default {
-  components: { DeleteCard },
+  components: { DeleteCard, CardMenuEdit },
     name:'CardMenu',
     props:{
         post: {type: Object, required: true}
