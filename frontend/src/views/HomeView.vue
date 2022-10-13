@@ -1,5 +1,7 @@
 <template>
-  <card-container />
+  <v-main>
+    <card-container />
+  </v-main>
 </template>
 
 <script>

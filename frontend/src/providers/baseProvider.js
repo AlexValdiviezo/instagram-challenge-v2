@@ -10,7 +10,7 @@ class BaseProvider{
         this.gqlc = gqlc
     }
     async getAllPosts(){
-        return await this.gqlc.query({
+        const {data: {getAllPosts: posts}} = await this.gqlc.query({
             query: gql`
                 query{
                     getAllPosts{
@@ -23,6 +23,7 @@ class BaseProvider{
                 }
             `
         })
+        return await posts
     }
     async deletePost(id){
         return await this.gqlc.mutate({
@@ -44,6 +45,59 @@ class BaseProvider{
             mutation: gql`
                 mutation{
                     addLike(id: ${JSON.stringify(id)}){
+                        id
+                    }
+                }
+            `
+        })
+    }
+    async uploadPost({title, image, username}){
+        return await this.gqlc.mutate({
+            mutation: gql`
+                mutation{
+                    createPost(post: {
+                        title: ${JSON.stringify(title)}
+                        image: ${JSON.stringify(image)}
+                        username: ${JSON.stringify(username)}
+                    }) {
+                        title
+                        image
+                        username
+                        likes
+                        id
+                    }
+                }
+            `
+        })
+    }
+    async getOnePost({id = String}){
+        return await this.gqlc.query({
+            query: gql`
+                query{
+                    getOnePost(id: ${JSON.stringify(id)}){
+                        title
+                        image
+                        username
+                    }
+                }
+            `
+        })
+    }
+    async updatePost({id = String, title = String, image = String, username = String}){
+        return await this.gqlc.mutate({
+            mutation: gql`
+                mutation{
+                    updatePost(post: {
+                        id: ${JSON.stringify(id)}
+                        title: ${JSON.stringify(title)}
+                        image: ${JSON.stringify(image)}
+                        username: ${JSON.stringify(username)}
+                    }){
+                        id
+                        title
+                        image
+                        username
+                        likes
                         id
                     }
                 }

@@ -5,7 +5,7 @@ const postService = require('../services/PostService')
 
 const getAllPosts = async(request, response) => {
     const posts = await postService.getAll()
-    return response.status(200).json({ posts })
+    return response.status(200).json({ posts: posts.reverse() })
 }
 
 const getOnePost = async(request, response) => {

@@ -2,58 +2,9 @@ import baseProvider from '@/providers/baseProvider'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+import alert from './modules/AlertModule'
 
-const alert={
-  state:{
-    alert: false,
-    deleteOk: false,
-    deleteError: false,
-    serverConnectError: false,
-    serverNotFound: false
-  },
-  mutations:{
-    setDeleteOk(state, payload){
-      if(payload && !state.deleteOk) {
-        state.deleteOk = payload
-        setTimeout(() => {
-          state.deleteOk = false
-        }, 2600)
-        return
-      }
-    },
-    setDeleteError(state, payload){
-      if(payload && !state.deleteError) {
-        state.deleteError = payload
-        setTimeout(() => {
-          state.deleteError = false
-        }, 2600)
-        return
-      }
-    },
-    setAlert(state, payload){
-      if(payload && !state.alert) {
-        state.alert = payload
-        setTimeout(() => {
-          state.alert = false
-        }, 2600)
-        return
-      }
-    },
-    setServerConnectError(state, payload){
-      if(payload && !state.serverConnectError) {
-        state.serverConnectError = payload
-        setTimeout(() => {
-          state.serverConnectError = false
-        }, 2600)
-        return
-      }
-    },
-    setServerNotFound(state, payload){
-      state.serverNotFound = payload
-    }
-  }
-}
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
@@ -89,7 +40,7 @@ export default new Vuex.Store({
     fetchPosts: async({commit}) => {
       commit('setLoading', true)
         try {
-          const {data: {getAllPosts: posts}} = await baseProvider.getAllPosts()
+          const posts = await baseProvider.getAllPosts()
           commit('setLoading', false)
           commit('setPosts', posts)
         } catch (error) {
@@ -97,7 +48,7 @@ export default new Vuex.Store({
           commit('setServerConnectError', true)
           setTimeout(async ()=>{
             try {
-              const {data: {getAllPosts: posts}} = await baseProvider.getAllPosts()
+              const posts = await baseProvider.getAllPosts()
               commit('setLoading', false)
               commit('setPosts', posts)
             } catch (error) {
@@ -105,7 +56,7 @@ export default new Vuex.Store({
                 commit('setServerConnectError', true)
                 setTimeout(async ()=>{
                   try {
-                    const {data: {getAllPosts: posts}} = await baseProvider.getAllPosts()
+                    const posts = await baseProvider.getAllPosts()
                     commit('setLoading', false)
                     commit('setPosts', posts)
                   } catch (error) {

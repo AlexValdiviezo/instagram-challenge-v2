@@ -10,6 +10,7 @@ const typeDefs = gql`
     }
 
     input PostInput{
+        id: String
         title: String
         image: String!
         username: String!
@@ -32,8 +33,8 @@ const typeDefs = gql`
         createPost(post: PostInput): Post
         addLike(id: ID!): Post
         deletePostById(id: ID!): Post
-        changeTitle(
-        id: ID!
+        updatePost(
+        post: PostInput!
         ): Post
     }
 `

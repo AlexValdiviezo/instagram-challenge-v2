@@ -1,5 +1,7 @@
 <template>
-  <v-btn @click="clicked" text width="100%" color="blue">editar publicación</v-btn>
+    <router-link :to="`/edit-post/${id}`">
+        <v-btn @click="clicked" text width="100%" color="blue">editar publicación</v-btn>
+    </router-link>
 </template>
 
 <script>

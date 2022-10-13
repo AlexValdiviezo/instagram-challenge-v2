@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
+import AddPostView from '../views/AddPostView.vue'
+import EditPostView from '../views/EditPostView.vue'
+
 
 Vue.use(VueRouter)
 
@@ -15,6 +18,16 @@ const routes = [
     path: '/profile/:id',
     name: 'profile',
     component: ProfileView
+  },
+  {
+    path: '/add-post',
+    name: 'addPost',
+    component: AddPostView
+  },
+  {
+    path: '/edit-post/:id',
+    name: 'editPost',
+    component: EditPostView
   }
 ]
 

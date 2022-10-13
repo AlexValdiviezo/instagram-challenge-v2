@@ -99,8 +99,8 @@ class PostService{
         }
     }
 
-    changeTitleService = async(id, newTitle) => {
-        const post = await Post.findByIdAndUpdate(id, {title: newTitle}, {new: true})
+    updatePost = async({id, title, image, username}) => {
+        const post = await Post.findByIdAndUpdate(id, {title, image, username}, {new: true})
         return post
     }
 }

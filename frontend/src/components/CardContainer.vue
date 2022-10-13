@@ -1,8 +1,8 @@
 <template>
     <div >
-            <v-layout column class="pt-16">
+            <v-layout column class="my-3">
                 <v-card
-                    class="mx-auto my-6"
+                    class="mx-auto my-3"
                     max-width="500"
                     outlined
                     raised

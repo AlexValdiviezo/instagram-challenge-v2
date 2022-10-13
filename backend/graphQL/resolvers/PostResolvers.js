@@ -4,7 +4,7 @@ const resolvers = {
     Query: {
         getAllPosts: async () => {
             const posts = await postService.getAll()
-            return posts
+            return posts.reverse()
         },
         getOnePost: async (_, {id: uid}) => {
             const {id, title, image, username, likes} =  await postService.getById(uid)
@@ -26,6 +26,10 @@ const resolvers = {
         },
         deletePostById: async (_, {id}) => {
             const post = await postService.deleteById(id)
+            return post
+        },
+        updatePost: async(_, {post: {id, title, image, username}}) => {
+            const post = await postService.updatePost({id, title, image, username})
             return post
         }
     }
