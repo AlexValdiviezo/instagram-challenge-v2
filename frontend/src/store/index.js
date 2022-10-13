@@ -18,6 +18,9 @@ export default new Vuex.Store({
     setPosts(state, posts){
       state.posts = posts
     },
+    addPost(state, post){
+      state.posts.unshift(post)
+    },
     changeIsMenuOpen(state, payload){
       state.isMenuOpen = payload
     },
@@ -33,6 +36,15 @@ export default new Vuex.Store({
     addLikePost(state, id){
       state.posts.map((post, index) => {
         if(post.id == id) state.posts[index].likes += 1
+      })
+    },
+    editPost(state, updatePost){
+      state.posts.map((post, index) => {
+        if(post.id === updatePost.id){
+          state.posts[index].username = updatePost.username
+          state.posts[index].title = updatePost.title
+          state.posts[index].image = updatePost.image
+        }
       })
     }
   },
