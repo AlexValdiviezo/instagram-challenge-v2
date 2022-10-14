@@ -5,11 +5,10 @@ const typeDefs = require('../graphQL/types/PostTypes')
 const cors = require('cors')
 
 class Server{
-    constructor(){
+    constructor(path){
         this.app = express()
         this.apolloServer = new ApolloServer({typeDefs, resolvers})
-        this.postRoute = '/api/post'
-        this.port = 4001
+        this.postRoute = path + '/post'
         this.dbConnect()
         this.apolloServerStart()
         this.middlewares()
@@ -38,9 +37,9 @@ class Server{
         this.app.use(this.postRoute, require('../routes/post'))
     }
 
-    listen(){
-        this.app.listen(this.port, ()=>{
-            console.log(`server listen at port ${this.port}`)
+    listen(port){
+        this.app.listen(port, ()=>{
+            console.log(`server listen at port ${port}`)
         })
         //host:port/graphql => ApolloServer
         //host:port/post => Express 
