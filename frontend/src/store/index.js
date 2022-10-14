@@ -9,7 +9,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     posts: [],
-    isMenuOpen: false,
     loading: false
   },
   getters: {
@@ -20,9 +19,6 @@ export default new Vuex.Store({
     },
     addPost(state, post){
       state.posts.unshift(post)
-    },
-    changeIsMenuOpen(state, payload){
-      state.isMenuOpen = payload
     },
     setLoading(state, payload){
       state.loading = payload
@@ -109,9 +105,6 @@ export default new Vuex.Store({
       }catch(error){
         console.log('error al añadir un like: ' + error)
       }
-    },
-    changeIsMenuOpen: ({commit}, payload) => {
-      commit('changeIsMenuOpen', payload)
     },
   },
   modules: {
