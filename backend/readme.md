@@ -17,11 +17,11 @@ Url of all graphql endpoints access: http://localhost:4001/graphql
 
 To set env create a .env and set this env:
 
-<code>
+```
 MONGO_DB= <br>
 PORT=4000 <br>
 API_REST=/api <br>
-</code>
+```
 
 # graphql
 <center><image src="./readme_assets/rootTypes.png"></center> <br>
@@ -198,11 +198,11 @@ Url para acceder a todos los endpoint de graphql: http://localhost:4001/graphql
 
 Configurar variables de entorno previo a ejecución:
 
-<code>
+```
 MONGO_DB= <br>
 PORT=4000 <br>
 API_REST=/api <br>
-</code>
+```
 
 # graphql
 <center><image src="./readme_assets/rootTypes.png"></center> <br>
