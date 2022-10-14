@@ -23,33 +23,33 @@ Es una aplicación representativa de instagram, desarrollada con Vue en su versi
 This is a dinamic component and is used to generate alerts of all kinds (success, warning, error). <hr>
 Este es un componente dinamico capas de generar alertas de diferentes categorias (exito, advertencia, error)
 
-- ### `CardContainer`: 
+- ### CardContainer: 
 This is a card container component. Its functionality is to get the posts through a provider and layout them in cards. <hr>
 Este es un componente contenedor de tarjetas. Su funcionalidad es obtener las publicaciones a traves de un `provider` y maquetarlas en diferentes tarjetas.
 
-- ### `Navbar`: 
+- ### Navbar: 
 This is a navbar and serves for navigation through app routes. <hr>
 Esta es una barra de navegacion y sirve para navegar a traves de las rutas que contiene la aplicación.
 
-- ### `ServerNotFound`:
+- ### ServerNotFound:
 This is a component that send a notification to the client with server not found. <hr>
 Esta es un componente que envía al cliente una notificacion avisando que el servidor no esta funcionando.
 
 # Views | Vistas
 
-- ### `AddPost`:
+- ### AddPost:
 This is a view that show a post form. Its functionality is to create the post. <hr>
 Este es una vista que muestra un formulario para crear una publicación.
 
-- ### `EditPost`:
+- ### EditPost:
 This is a view that show a card with edit action. <hr>
 Esta es una vista que muestra la card con la opción de editarla.
 
-- ### `Home`:
+- ### Home:
 This is a home view. <hr>
 Esta es la vista principal.
 
-- ### `Profile`:
+- ### Profile:
 This is a dinamic profile view with username.<hr>
 Esta es una vista dinamica que muestra el perfil dependiendo de su `username`.
 
