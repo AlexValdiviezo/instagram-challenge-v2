@@ -54,7 +54,7 @@ This is a dinamic profile view with username.<hr>
 Esta es una vista dinamica que muestra el perfil dependiendo de su `username`.
 
 # App view | Vista de la aplicación
-![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/appView.png) <br>
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/appView.png?raw=true) <br>
 
 # Using alert component | Usando el componente de alertas
 * Set new return text and type computed propertys: <br>
