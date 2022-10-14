@@ -19,7 +19,7 @@ Es una aplicación representativa de instagram, desarrollada con Vue en su versi
 
 # Components | Componentes
 
-- ### `Alert`:
+- ### Alert:
 This is a dinamic component and is used to generate alerts of all kinds (success, warning, error). <hr>
 Este es un componente dinamico capas de generar alertas de diferentes categorias (exito, advertencia, error)
 
