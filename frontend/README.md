@@ -54,18 +54,18 @@ This is a dinamic profile view with username.<hr>
 Esta es una vista dinamica que muestra el perfil dependiendo de su `username`.
 
 # App view | Vista de la aplicación
-[](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/appView.png) <br>
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/appView.png) <br>
 
 # Using alert component | Usando el componente de alertas
 * Set new return text and type computed propertys: <br>
-[](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/computedAlert.png) <br>
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/computedAlert.png) <br>
 * Set Alert states and create mutations: <br>
-[](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/AlertStates.png) <br>
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/AlertStates.png) <br>
 * Map mutations and send true: <br>
-[](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/mapMutationsAlerts.png) <br>
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/mapMutationsAlerts.png) <br>
 
 ## *Preview of alert:*
-[](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/alertPreview.png)
+![text](https://github.com/bloome-alex/instagram-challenge-v2/tree/main/frontend/readme_assets/images/alertPreview.png)
 
 <hr>
 
