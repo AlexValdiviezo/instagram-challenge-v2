@@ -6,11 +6,11 @@
                     <v-icon size="70">person</v-icon>
                 </v-avatar>
                 <v-card-text class="title">
-                    {{id}}
+                    {{username}}
                 </v-card-text>
             </v-layout>
             <v-divider />
-            <v-card-text>Coming soon: {{id}}'s posts </v-card-text>
+            <v-card-text>Coming soon: {{username}}'s posts </v-card-text>
         </v-card>
     </v-container>
 </template>
@@ -20,7 +20,7 @@ export default {
     name:'ProfileView',  
     data(){
         return{
-            id: this.$route.params.id
+            username: this.$route.params.username
         }
     },
     mounted(){

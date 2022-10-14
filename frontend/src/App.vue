@@ -13,7 +13,7 @@ import Alert from './components/Alert.vue'
 import NavBar from './components/NavBar.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: { ServerNotFound, Alert, NavBar },
   computed:{
     alert(){

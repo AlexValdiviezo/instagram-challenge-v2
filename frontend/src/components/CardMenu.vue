@@ -21,16 +21,16 @@ import CardMenuEdit from './CardMenuEdit.vue'
 
 export default {
   components: { DeleteCard, CardMenuEdit },
-    name:'CardMenu',
-    props:{
-        post: {type: Object, required: true}
-    },
-    methods:{
-        cardDelete(){
-            this.dialog = false
-            this.$emit('cardDelete')
-        }
-    }
+  name:'CardMenu',
+  props:{
+      post: {type: Object, required: true}
+  },
+  methods:{
+      cardDelete(){
+          this.dialog = false
+          this.$emit('cardDelete')
+      }
+  }
 }
 </script>
 

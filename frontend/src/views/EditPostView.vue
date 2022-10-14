@@ -57,6 +57,7 @@
 import { mapMutations } from 'vuex'
 import baseProvider from '../providers/baseProvider'
 export default {
+    name: 'editPostView',
     data(){
         return{
             valid: false,

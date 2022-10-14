@@ -72,6 +72,7 @@ import { mapMutations } from 'vuex'
 import baseprovider from '../providers/baseProvider'
 
 export default {
+    name: 'AddPostView',
     data(){
         return{
             valid: false,

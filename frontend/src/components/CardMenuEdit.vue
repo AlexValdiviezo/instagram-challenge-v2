@@ -1,7 +1,5 @@
 <template>
-    <router-link :to="`/edit-post/${id}`">
-        <v-btn @click="clicked" text width="100%" color="blue">editar publicación</v-btn>
-    </router-link>
+    <v-btn :to="route" @click="clicked" text width="100%" color="blue">editar publicación</v-btn>
 </template>
 
 <script>
@@ -11,10 +9,20 @@ export default {
     props:{
         id: {type: String, required: true}
     },
+    data(){
+        return{
+            route:{
+                name: 'editPost',
+                params: {
+                    id: this.id
+                }
+            }
+        }
+    },
     methods:{
         ...mapActions(['editPost']),
         clicked(){
-            
+            console.log(this.route)
         }
     }
 }

@@ -5,9 +5,7 @@
             <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             
             <v-spacer></v-spacer>
-            <router-link to="/" tag="div">
-              <v-app-bar-title class="title pointer">Instagram Challenge</v-app-bar-title>
-            </router-link>
+            <v-btn right append to="/" plain retain-focus-on-click>Instagram Challenge</v-btn>
         </v-app-bar>
 
         <v-navigation-drawer 
@@ -26,11 +24,9 @@
         <v-list-item-group
           active-class="deep-purple--text text--accent-4"
         >
-          <router-link to="/add-post" tag="div">
-            <v-btn block color="rgba(0,0,0,0)" depressed>
-              <v-list-item-title class="text-center font-weight-medium text-h6">ADD POST</v-list-item-title> 
-            </v-btn>
-          </router-link>
+          <v-btn to="/add-post" block plain retain-focus-on-click>
+            <v-list-item-title class="text-center font-weight-medium text-h6">ADD POST</v-list-item-title> 
+          </v-btn>
         </v-list-item-group>
       </v-list>
         </v-navigation-drawer>
@@ -40,6 +36,7 @@
 
 <script>
   export default {
+    name: 'NavBar',
     data: () => ({
       drawer: false
     })

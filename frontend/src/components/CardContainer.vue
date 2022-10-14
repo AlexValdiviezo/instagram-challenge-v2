@@ -11,12 +11,10 @@
                 :key="post.id"
                 >
                 <v-card-actions class="pa-4">
-                    <router-link :to="`/profile/${post.username}`" tag="div">
-                        <v-layout align-center justify-start class="pointer">
+                    <v-btn plain :to="{ name: 'profile', params: { username: post.username } }">
                         <v-icon>person</v-icon>
                         <v-card-text>{{post.username}}</v-card-text>
-                        </v-layout>
-                    </router-link>
+                    </v-btn>
                     <v-spacer />
                     <card-menu :post="post" @cardDelete="fetchPosts"></card-menu>
                 </v-card-actions>
@@ -48,7 +46,7 @@ import { mapActions } from 'vuex'
 import CardMenu from './CardMenu.vue'
 
 export default {
-  components: { CardMenu },
+    components: { CardMenu },
     name: 'Card-Container',
     mounted(){
         this.fetchPosts()
