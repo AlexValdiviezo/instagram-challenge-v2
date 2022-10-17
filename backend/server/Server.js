@@ -30,7 +30,7 @@ class Server{
             extended: false
         }));
         this.app.use(express.json())
-        this.app.use(cors())
+        //this.app.use(cors())
     }
 
     routes(){
