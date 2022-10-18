@@ -2,8 +2,8 @@ const postService = require('../../services/PostService')
 
 const resolvers = {
     Query: {
-        getAllPosts: async () => {
-            const posts = await postService.getAll()
+        getAllPosts: async (_, {username=''}) => {
+            const posts = await postService.getAll({username})
             return posts.reverse()
         },
         getOnePost: async (_, {id: uid}) => {

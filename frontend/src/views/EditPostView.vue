@@ -1,5 +1,4 @@
 <template>
-<v-main>
     <v-col cols="12" offset-sm="1" sm="10" order-sm="1" offset-md="2" md="8" order-md="2" offset-lg="3" lg="6" order-lg="3" offset-xl="4" xl="4" order-xl="4">
         <v-card
             class="mx-auto my-3"
@@ -50,7 +49,6 @@
             </v-form>
         </v-card>
     </v-col>
-</v-main>
 </template>
 
 <script>

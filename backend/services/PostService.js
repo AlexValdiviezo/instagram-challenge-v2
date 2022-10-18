@@ -12,8 +12,10 @@ class PostService{
         return totalDocs
     }
 
-    getAll = async() => {
-        const posts = await Post.find({})
+    getAll = async({username}) => {
+        let posts = null
+        if(username != "") posts = await Post.find({username})
+        else posts = await Post.find({})
         return posts
     }
 

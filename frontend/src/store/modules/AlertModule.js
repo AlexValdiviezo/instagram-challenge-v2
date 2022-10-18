@@ -3,14 +3,24 @@ const AlertModule={
     alert: false,
     addPostOk: false,
     addPostError: false,
-    editPostOk: false,
-    editPostError: false,
     deleteOk: false,
     deleteError: false,
+    editPostOk: false,
+    editPostError: false,
+    usernameIsEmpty: false,
     serverConnectError: false,
     serverNotFound: false
   },
   mutations:{
+    setUsernameIsEmpty(state, payload){
+      if(payload && !state.usernameIsEmpty) {
+        state.usernameIsEmpty = payload
+        setTimeout(() => {
+          state.usernameIsEmpty = false
+        }, 2600)
+        return
+      }
+    },
     setEditPostOk(state,payload){
       if(payload && !state.editPostOk) {
         state.editPostOk = payload

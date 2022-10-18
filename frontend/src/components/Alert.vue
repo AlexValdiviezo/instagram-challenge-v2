@@ -32,6 +32,7 @@ export default {
     },
     computed:{
         text(){
+            if(this.$store.state.alertModule.usernameIsEmpty) return 'Esta sección requiere de un username, configurelo en menu->profile'
             if(this.$store.state.alertModule.deleteOk) return 'Se ha eliminado la publicación'
             if(this.$store.state.alertModule.deleteError) return 'Ha ocurrido un error al eliminar la publicación'
             if(this.$store.state.alertModule.serverConnectError) return `No se pudo conectar con el servidor, reintentando nuevamente en ${this.timer}`
@@ -42,6 +43,7 @@ export default {
             return 'alert'
         },
         type(){
+            if(this.$store.state.alertModule.usernameIsEmpty) return 'error'
             if(this.$store.state.alertModule.deleteError) return 'error'
             if(this.$store.state.alertModule.deleteOk) return 'success'
             if(this.$store.state.alertModule.serverConnectError) return 'warning'

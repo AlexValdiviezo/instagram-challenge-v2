@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import AddPostView from '../views/AddPostView.vue'
 import EditPostView from '../views/EditPostView.vue'
+import MyPosts from '../views/MyPosts.vue'
 
 
 Vue.use(VueRouter)
@@ -15,7 +16,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/profile/:username',
+    path: '/profile',
     name: 'profile',
     component: ProfileView
   },
@@ -23,6 +24,11 @@ const routes = [
     path: '/add-post',
     name: 'addPost',
     component: AddPostView
+  },
+  {
+    path: '/my-posts',
+    name: 'myPosts',
+    component: MyPosts
   },
   {
     path: '/edit-post/:id',

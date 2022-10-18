@@ -4,6 +4,12 @@ module.exports = defineConfig({
     'vuetify'
   ],
   devServer: {
-    proxy: 'http://localhost:4000'
+    proxy: {
+      '^/graphql': {
+        target: 'http://localhost:4000',
+        ws: true,
+        changeOrigin: true
+      },
+    }
   }
 })

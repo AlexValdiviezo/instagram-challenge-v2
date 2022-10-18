@@ -3,7 +3,9 @@
     <server-not-found v-if="serverNotFound"/>
     <alert v-if="alert"/>
     <nav-bar />
-    <router-view/>
+    <v-main>
+      <router-view/>
+    </v-main>
   </v-app>
 </template>
 

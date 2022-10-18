@@ -9,9 +9,18 @@ This is a server backend with express `api rest` and graphql endpoints.
 
 # Init
 
-1) `npm install` to install all dependences.
-2) `npm run dev` to run server at develop environment.
-3) `npm run start` to run server at production environment.
+```
+npm install
+``` 
+to install all dependences.
+```
+npm run dev
+``` 
+to run server at develop environment.
+```
+npm run start
+``` 
+to run server at production environment. `warning: pm2 is required.`
 
 Url of all graphql endpoints access: http://localhost:4001/graphql
 

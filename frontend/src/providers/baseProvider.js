@@ -9,11 +9,11 @@ class BaseProvider{
     setGqlc(gqlc){
         this.gqlc = gqlc
     }
-    async getAllPosts(){
+    async getAllPosts(username = ''){
         const {data: {getAllPosts: posts}} = await this.gqlc.query({
             query: gql`
                 query{
-                    getAllPosts{
+                    getAllPosts(username: ${JSON.stringify(username)}){
                         id
                         username
                         title
