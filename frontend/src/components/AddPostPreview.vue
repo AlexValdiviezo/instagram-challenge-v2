@@ -9,14 +9,14 @@
         >
             <v-card-actions class="pa-4">
                 <v-layout align-center justify-start class="pointer">
-                <v-avatar
-                v-if="!!username"
-                color="brown"
-                >
-                    <span v-if="!avatar.includes('.jpg') && !avatar.includes('.png')" class="white--text text-h5">{{ username[0]+username[1] }}</span>
-                    <v-img v-else :src="avatar"/>
-                </v-avatar>
-                <v-card-text>{{username}}</v-card-text>
+                    <v-avatar
+                    v-if="!!username"
+                    color="brown"
+                    >
+                        <span v-if="!avatar.includes('.jpg') && !avatar.includes('.png')" class="white--text text-h5">{{ username[0]+username[1] }}</span>
+                        <v-img v-else :src="avatar"/>
+                    </v-avatar>
+                    <v-card-text>{{username}}</v-card-text>
                 </v-layout>
                 <v-spacer />
                 <v-icon>menu</v-icon>

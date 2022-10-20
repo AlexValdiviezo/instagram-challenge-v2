@@ -6,7 +6,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '^/graphql': {
-        target: 'http://localhost:4000',
+        target: process.env.VUE_APP_BACKEND_TARGET,
         ws: true,
         changeOrigin: true
       },

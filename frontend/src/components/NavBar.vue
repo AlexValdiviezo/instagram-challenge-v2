@@ -25,19 +25,19 @@
           active-class="deep-purple--text text--accent-4"
         >
 
-          <v-list-item>
+          <v-list-item to="/home">
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-btn to="/home" block plain retain-focus-on-click>
+            <v-btn block plain>
               <v-list-item-title class="text-h6 text-left">Home</v-list-item-title>
             </v-btn>
           </v-list-item>
-          <v-list-item>
+          <v-list-item to="/profile">
             <v-list-item-icon>
               <v-icon>account_circle</v-icon>
             </v-list-item-icon>
-            <v-btn to="/profile" block plain retain-focus-on-click>
+            <v-btn block plain>
               <v-list-item-title class="text-h6 text-left">Profile</v-list-item-title>
             </v-btn>
           </v-list-item>
@@ -45,28 +45,31 @@
             :value="false"
           >
             <template v-slot:activator>
-              <v-btn block plain retain-focus-on-click>
+              <v-btn block plain @click="postMenu = !postMenu">
                 <v-list-item-icon>
                   <v-icon class="mr-10">collections</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title class="text-h6 text-left">POST</v-list-item-title>
+                <v-list-item-title class="text-h6 text-left ml-3">POST</v-list-item-title>
+                <v-list-item-icon>
+                  <v-icon>{{iconPostMenu}}</v-icon>
+                </v-list-item-icon>
               </v-btn>
             </template>
 
-            <v-list-item>
+            <v-list-item to="/add-post">
               <v-list-item-icon>
                 <v-icon>add_photo_alternate</v-icon>
               </v-list-item-icon>
-              <v-btn @click="isUsername" block plain retain-focus-on-click>
+              <v-btn @click="isUsername" block plain>
                 <v-list-item-title class="text-h6 text-left">Add Post</v-list-item-title> 
               </v-btn>
             </v-list-item>
-            <v-list-item>
+            <v-list-item :to="{name:'myPosts', params:{user: username}}">
               <v-list-item-icon>
                 <v-icon>image</v-icon>
               </v-list-item-icon>
-              <v-btn :to="{name:'myPosts', params:{user: username}}" block plain retain-focus-on-click>
-                <v-list-item-title class="text-h6">My Posts</v-list-item-title> 
+              <v-btn block plain>
+                <v-list-item-title class="text-h6 text-left">My Posts</v-list-item-title> 
               </v-btn>
             </v-list-item>
           </v-list-group>
@@ -83,9 +86,14 @@ import { mapMutations } from 'vuex'
   export default {
     name: 'NavBar',
     data: () => ({
-      drawer: false
+      drawer: false,
+      postMenu: false
     }),
     computed:{
+      iconPostMenu(){
+        if(this.postMenu) return 'expand_more'
+        return 'expand_less'
+      },  
       username(){
         return this.$store.state.userModule.username
       }
