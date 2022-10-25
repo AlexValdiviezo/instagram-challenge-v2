@@ -2,8 +2,15 @@
     <nav>
 
         <v-app-bar app fixed elevation="3">
+
             <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            
+            <v-switch
+            dark
+            v-model="theme"
+            hide-details
+            append-icon="light_mode"
+            color="black"
+            ></v-switch>
             <v-spacer></v-spacer>
             <v-btn right append to="/" plain retain-focus-on-click>Instagram Challenge</v-btn>
         </v-app-bar>
@@ -73,10 +80,14 @@
               </v-btn>
             </v-list-item>
           </v-list-group>
-          
         </v-list-item-group>
       </v-list>
-        </v-navigation-drawer>
+      <v-list>
+        <v-list-item class="justify-center">
+
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     </nav>
 
 </template>
@@ -87,7 +98,8 @@ import { mapMutations } from 'vuex'
     name: 'NavBar',
     data: () => ({
       drawer: false,
-      postMenu: false
+      postMenu: false,
+      theme: false,
     }),
     computed:{
       iconPostMenu(){
@@ -96,6 +108,11 @@ import { mapMutations } from 'vuex'
       },  
       username(){
         return this.$store.state.userModule.username
+      }
+    },
+    watch:{
+      theme(value){
+        this.$vuetify.theme.dark = !value
       }
     },
     methods:{
