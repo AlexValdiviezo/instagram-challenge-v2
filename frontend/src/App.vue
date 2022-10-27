@@ -24,6 +24,9 @@ export default {
     serverNotFound(){
       return this.$store.state.alertModule.serverNotFound
     }
+  },
+  created(){
+    this.$vuetify.theme.dark = this.$store.state.themeModule.darkMode
   }
 }
 </script>

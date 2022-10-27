@@ -93,13 +93,12 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
   export default {
     name: 'NavBar',
     data: () => ({
       drawer: false,
       postMenu: false,
-      theme: false,
     }),
     computed:{
       iconPostMenu(){
@@ -108,15 +107,21 @@ import { mapMutations } from 'vuex'
       },  
       username(){
         return this.$store.state.userModule.username
+      },
+      theme:{
+        get(){
+          return !this.$store.state.themeModule.darkMode
+        },
+        set(value){
+          this.changeDarkMode(!value)
+          this.$vuetify.theme.dark = !value
+        }
       }
     },
-    watch:{
-      theme(value){
-        this.$vuetify.theme.dark = !value
-      }
-    },
+
     methods:{
       ...mapMutations(['setUsernameIsEmpty', 'setAlert']),
+      ...mapActions(['changeDarkMode']),
       isUsername(){
         if(this.$store.state.userModule.username.length <= 0){
           this.setUsernameIsEmpty(true)

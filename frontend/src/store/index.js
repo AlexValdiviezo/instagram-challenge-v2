@@ -5,6 +5,7 @@ import alert from './modules/AlertModule'
 import user from './modules/UserModule'
 import post from './modules/PostModule'
 import createPersistedState from "vuex-persistedstate";
+import themeModule from './modules/ThemeModule'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,7 @@ export default new Vuex.Store({
     loading: false,
   },
   plugins: [createPersistedState({
-    paths:['userModule']
+    paths:['userModule', 'themeModule']
   })],
   mutations: {
     addPost(state, post){
@@ -30,6 +31,7 @@ export default new Vuex.Store({
   modules: {
     alertModule: alert,
     userModule: user,
-    postModule: post
+    postModule: post,
+    themeModule
   }
 })
